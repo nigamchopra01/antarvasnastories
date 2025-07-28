@@ -227,13 +227,14 @@
         }
         
         .blog-card {
-            background: var(--card-bg);
+            background: var(--gradient-hot);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             overflow: hidden;
             transition: all 0.4s ease;
             border: 2px solid transparent;
             position: relative;
+            color: white;
         }
         
         .blog-card::after {
@@ -282,6 +283,7 @@
             font-size: 0.85rem;
             opacity: 0.9;
             margin-bottom: 10px;
+            color: white;
         }
         
         .blog-title {
@@ -289,14 +291,17 @@
             font-weight: 600;
             margin: 0;
             line-height: 1.3;
+            color: white;
         }
         
         .blog-card-body {
             padding: 25px;
+            color: white;
+            background: rgba(0,0,0,0.1);
         }
         
         .blog-excerpt {
-            color: var(--text-light);
+            color: rgba(255,255,255,0.9);
             margin-bottom: 20px;
             line-height: 1.6;
         }
