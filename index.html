@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern, minimal blog with cutting-edge insights and thoughts. Discover the latest articles and updates.">
+    <meta name="keywords" content="blog, technology, insights, articles, modern, minimal">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayoption.github.io/Gandi-Kahaniya/">
+    <meta property="og:title" content="Your Blog - Modern Insights & Articles">
+    <meta property="og:description" content="A modern, minimal blog with cutting-edge insights and thoughts. Discover the latest articles and updates.">
+    <meta property="og:image" content="https://sanjayoption.github.io/Gandi-Kahaniya/logo.png">
+    <meta property="og:site_name" content="Your Blog">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sanjayoption.github.io/Gandi-Kahaniya/">
+    <meta property="twitter:title" content="Your Blog - Modern Insights & Articles">
+    <meta property="twitter:description" content="A modern, minimal blog with cutting-edge insights and thoughts. Discover the latest articles and updates.">
+    <meta property="twitter:image" content="https://sanjayoption.github.io/Gandi-Kahaniya/logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sanjayoption.github.io/Gandi-Kahaniya/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <title>Your Blog - Modern Insights & Articles</title>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Your Blog",
+        "description": "A modern, minimal blog with cutting-edge insights and thoughts",
+        "url": "https://sanjayoption.github.io/Gandi-Kahaniya/",
+        "image": "https://sanjayoption.github.io/Gandi-Kahaniya/logo.png",
+        "author": {
+            "@type": "Person",
+            "name": "Your Name"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Your Blog",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://sanjayoption.github.io/Gandi-Kahaniya/logo.png"
+            }
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --card-gradient: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --accent: #3498db;
+            --accent-light: #e8f4f8;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+            --border-radius: 16px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background: var(--primary-gradient);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        /* Animated background elements */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        .floating-shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 10%;
+            animation-delay: -7s;
+        }
+        
+        .floating-shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 70%;
+            animation-delay: -14s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+            100% { transform: translateY(0px) rotate(360deg); opacity: 0.7; }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            background: white;
+            padding: 10px;
+        }
+        
+        .logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .blog-card {
+            background: var(--card-gradient);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+            cursor: pointer;
+        }
+        
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .blog-card:hover::before {
+            left: 100%;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .blog-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+        
+        .blog-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+        
+        .read-more:hover {
+            gap: 10px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(52, 152, 219, 0.3);
+            border-top: 3px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Blog Post View Styles */
+        .blog-post-view {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .back-nav {
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            gap: 12px;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .article-meta {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .reading-time {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .article-excerpt {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, var(--accent), #2980b9);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .tag:hover {
+            transform: translateY(-2px);
+        }
+        
+        .article-content {
+            background: var(--card-gradient);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .article-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #2980b9, #9b59b6);
+        }
+        
+        .article-content h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 30px 0 20px 0;
+            color: var(--text-primary);
+            position: relative;
+        }
+        
+        .article-content h1:first-child {
+            margin-top: 0;
+        }
+        
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            color: var(--text-primary);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--accent), #2980b9);
+            border-radius: 2px;
+        }
+        
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 10px 0;
+            color: var(--text-primary);
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .article-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .article-content em {
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .article-content a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom-color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            border-bottom-color: var(--accent);
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        
+        .article-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .article-content li strong {
+            background: var(--accent-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .article-content code {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 0.9em;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 30px 0;
+            background: var(--accent-light);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+        
+        .share-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255,255,255,0.5);
+            border-radius: var(--border-radius);
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .share-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .share-btn.twitter {
+            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+        }
+        
+        .share-btn.facebook {
+            background: linear-gradient(135deg, #4267b2, #365899);
+        }
+        
+        .share-btn.linkedin {
+            background: linear-gradient(135deg, #0077b5, #005885);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .blog-card {
+                padding: 20px;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-content {
+                padding: 25px;
+            }
+            
+            .article-content h1 {
+                font-size: 1.7rem;
+            }
+            
+            .article-content h2 {
+                font-size: 1.4rem;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+        
+        /* SEO Enhancement: Ensure good contrast */
+        @media (prefers-contrast: high) {
+            :root {
+                --text-primary: #000;
+                --text-secondary: #333;
+            }
+        }
+        
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Blog List View -->
+        <div id="blog-list-view">
+            <header class="header">
+                <div class="logo">
+                    <img src="logo.png" alt="Blog Logo" loading="eager">
+                </div>
+                <h1>Your Blog</h1>
+                <p class="subtitle">Modern insights, minimal design, maximum impact. Discover thoughts and ideas that matter.</p>
+            </header>
+            
+            <main>
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading latest articles...</p>
+                </div>
+                
+                <div id="blog-container" class="blog-grid" style="display: none;"></div>
+            </main>
+        </div>
+        
+        <!-- Blog Post View -->
+        <div id="blog-post-view" class="blog-post-view">
+            <nav class="back-nav">
+                <a class="back-link" onclick="showBlogList()">
+                    ← Back to Blog
+                </a>
+            </nav>
+            
+            <header class="article-header" id="article-header">
+                <!-- Will be populated dynamically -->
+            </header>
+            
+            <article class="article-content" id="article-content">
+                <!-- Will be populated dynamically -->
+            </article>
+            
+            <div class="share-section">
+                <h3 class="share-title">Share this article</h3>
+                <div class="share-buttons">
+                    <a class="share-btn twitter" onclick="shareOnTwitter()">
+                        📱 Share on Twitter
+                    </a>
+                    <a class="share-btn facebook" onclick="shareOnFacebook()">
+                        📘 Share on Facebook
+                    </a>
+                    <a class="share-btn linkedin" onclick="shareOnLinkedIn()">
+                        💼 Share on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>&copy; 2025 Your Blog. All rights reserved. Built with ❤️ and modern web standards.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Blog configuration
+        const BLOG_CONFIG = {
+            blogFolder: 'blog',
+            postsPerPage: 10,
+            baseUrl: 'https://sanjayoption.github.io/Gandi-Kahaniya/',
+            siteTitle: 'Your Blog',
+            siteDescription: 'A modern, minimal blog with cutting-edge insights and thoughts'
+        };
+        
+        // Blog posts will be automatically discovered
+        let blogPosts = [];
+        let currentPost = null;
+        
+        // Enhanced markdown parser
+        function parseMarkdown(content) {
+            // Handle headers
+            content = content.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+            content = content.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+            content = content.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+            
+            // Handle emphasis
+            content = content.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            content = content.replace(/\*(.+?)\*/g, '<em>$1</em>');
+            
+            // Handle links
+            content = content.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
+            
+            // Handle inline code
+            content = content.replace(/`(.+?)`/g, '<code>$1</code>');
+            
+            // Handle blockquotes
+            content = content.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
+            
+            // Handle lists
+            const lines = content.split('\n');
+            let inList = false;
+            let listType = null;
+            let result = [];
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const isOrderedList = /^\d+\.\s/.test(line);
+                const isUnorderedList = /^[-*+]\s/.test(line);
+                
+                if (isOrderedList || isUnorderedList) {
+                    const currentListType = isOrderedList ? 'ol' : 'ul';
+                    
+                    if (!inList) {
+                        result.push(`<${currentListType}>`);
+                        inList = true;
+                        listType = currentListType;
+                    } else if (listType !== currentListType) {
+                        result.push(`</${listType}>`);
+                        result.push(`<${currentListType}>`);
+                        listType = currentListType;
+                    }
+                    
+                    const listItem = line.replace(/^(\d+\.|\-|\*|\+)\s/, '');
+                    result.push(`<li>${listItem}</li>`);
+                } else {
+                    if (inList) {
+                        result.push(`</${listType}>`);
+                        inList = false;
+                        listType = null;
+                    }
+                    result.push(line);
+                }
+            }
+            
+            if (inList) {
+                result.push(`</${listType}>`);
+            }
+            
+            content = result.join('\n');
+            
+            // Handle paragraphs
+            content = content.replace(/\n\n/g, '</p><p>');
+            content = content.replace(/^\s*<\/p>/, '');
+            content = content.replace(/<p>\s*$/, '');
+            
+            // Wrap in paragraph tags if needed
+            if (!content.startsWith('<') && content.trim()) {
+                content = '<p>' + content + '</p>';
+            }
+            
+            return content;
+        }
+        
+        // Function to extract metadata from content
+        function extractMetadata(content) {
+            const lines = content.split('\n');
+            const metadata = {};
+            let contentStart = 0;
+            
+            if (lines[0] === '---') {
+                for (let i = 1; i < lines.length; i++) {
+                    if (lines[i] === '---') {
+                        contentStart = i + 1;
+                        break;
+                    }
+                    const [key, ...valueParts] = lines[i].split(':');
+                    if (key && valueParts.length) {
+                        metadata[key.trim()] = valueParts.join(':').trim().replace(/^["']|["']$/g, '');
+                    }
+                }
+            }
+            
+            const actualContent = lines.slice(contentStart).join('\n');
+            return { metadata, content: actualContent };
+        }
+        
+        // Function to create excerpt
+        function createExcerpt(content, length = 150) {
+            const text = content.replace(/<[^>]*>/g, '').replace(/\n/g, ' ').trim();
+            return text.length > length ? text.substring(0, length) + '...' : text;
+        }
+        
+        // Function to format date
+        function formatDate(dateString) {
+            if (!dateString) return new Date().toLocaleDateString();
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+        
+        // Function to calculate reading time
+        function calculateReadingTime(content) {
+            const words = content.split(' ').length;
+            const readingTime = Math.ceil(words / 200); // Average reading speed
+            return `${readingTime} min read`;
+        }
+        
+        // Function to discover blog posts
+        async function discoverBlogPosts() {
+            // List of markdown files to check - UPDATE THIS when you add new posts
+            const postManifest = [
+                'my-first-post.md',
+                // Add your new .md files here
+            ];
+            
+            const posts = [];
+            
+            for (const filename of postManifest) {
+                try {
+                    const response = await fetch(`${BLOG_CONFIG.blogFolder}/${filename}`);
+                    if (response.ok) {
+                        const content = await response.text();
+                        const { metadata, content: actualContent } = extractMetadata(content);
+                        
+                        const post = {
+                            filename,
+                            title: metadata.title || filename.replace(/\.md$/, '').replace(/-/g, ' '),
+                            date: metadata.date || new Date().toISOString().split('T')[0],
+                            author: metadata.author || 'Your Name',
+                            excerpt: metadata.excerpt || createExcerpt(actualContent),
+                            content: actualContent,
+                            htmlContent: parseMarkdown(actualContent),
+                            tags: metadata.tags ? metadata.tags.split(',').map(tag => tag.trim()) : [],
+                            readingTime: calculateReadingTime(actualContent),
+                            url: `${BLOG_CONFIG.baseUrl}${BLOG_CONFIG.blogFolder}/${filename}`,
+                            metadata: metadata
+                        };
+                        
+                        posts.push(post);
+                    }
+                } catch (error) {
+                    console.log(`Could not load ${filename}:`, error);
+                }
+            }
+            
+            // Sort posts by date (newest first)
+            return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+        
+        // Function to render blog posts
+        function renderBlogPosts(posts) {
+            const container = document.getElementById('blog-container');
+            const loading = document.getElementById('loading');
+            
+            if (posts.length === 0) {
+                container.innerHTML = `
+                    <div class="blog-card" style="grid-column: 1 / -1; text-align: center;">
+                        <h2>Welcome to Your Blog!</h2>
+                        <p>No blog posts found yet. Add your first <code>.md</code> file to the <code>blog/</code> folder to get started.</p>
+                        <p style="margin-top: 20px;">Create a file like <code>blog/my-first-post.md</code> and it will automatically appear here!</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = posts.map((post, index) => `
+                    <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting" onclick="showBlogPost(${index})">
+                        <div class="blog-meta">
+                            <time datetime="${post.date}" itemprop="datePublished">${formatDate(post.date)}</time>
+                            <span>•</span>
+                            <span>${post.readingTime}</span>
+                            <span>•</span>
+                            <span itemprop="author">${post.author}</span>
+                        </div>
+                        <h2 class="blog-title" itemprop="headline">${post.title}</h2>
+                        <p class="blog-excerpt" itemprop="description">${post.excerpt}</p>
+                        <a class="read-more" itemprop="url">
+                            Read More →
+                        </a>
+                        <meta itemprop="dateModified" content="${post.date}">
+                    </article>
+                `).join('');
+            }
+            
+            loading.style.display = 'none';
+            container.style.display = 'grid';
+            
+            // Add animation delay to cards
+            const cards = document.querySelectorAll('.blog-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        }
+        
+        // Function to show individual blog post
+        function showBlogPost(index) {
+            currentPost = blogPosts[index];
+            
+            // Update browser URL without reload
+            const url = new URL(window.location);
+            url.searchParams.set('post', currentPost.filename.replace('.md', ''));
+            window.history.pushState({ post: currentPost.filename }, '', url);
+            
+            // Update page title and meta
+            document.title = `${currentPost.title} | ${BLOG_CONFIG.siteTitle}`;
+            
+            // Populate header
+            const header = document.getElementById('article-header');
+            header.innerHTML = `
+                <div class="article-meta">
+                    <time datetime="${currentPost.date}">${formatDate(currentPost.date)}</time>
+                    <span>•</span>
+                    <span class="reading-time">${currentPost.readingTime}</span>
+                    <span>•</span>
+                    <span>${currentPost.author}</span>
+                </div>
+                
+                <h1 class="article-title">${currentPost.title}</h1>
+                
+                ${currentPost.excerpt ? `<p class="article-excerpt">${currentPost.excerpt}</p>` : ''}
+                
+                ${currentPost.tags.length > 0 ? `
+                    <div class="tags">
+                        ${currentPost.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                ` : ''}
+            `;
+            
+            // Populate content
+            const content = document.getElementById('article-content');
+            content.innerHTML = currentPost.htmlContent;
+            
+            // Show post view, hide list view
+            document.getElementById('blog-list-view').style.display = 'none';
+            document.getElementById('blog-post-view').style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Function to show blog list
+        function showBlogList() {
+            // Update browser URL
+            const url = new URL(window.location);
+            url.searchParams.delete('post');
+            window.history.pushState({}, '', url);
+            
+            // Reset page title
+            document.title = `${BLOG_CONFIG.siteTitle} - Modern Insights & Articles`;
+            
+            // Show list view, hide post view
+            document.getElementById('blog-list-view').style.display = 'block';
+            document.getElementById('blog-post-view').style.display = 'none';
+            
+            currentPost = null;
+        }
+        
+        // Handle browser back/forward
+        window.addEventListener('popstate', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postParam = urlParams.get('post');
+            
+            if (postParam) {
+                const postIndex = blogPosts.findIndex(post => 
+                    post.filename.replace('.md', '') === postParam
+                );
+                if (postIndex !== -1) {
+                    showBlogPost(postIndex);
+                } else {
+                    showBlogList();
+                }
+            } else {
+                showBlogList();
+            }
+        });
+        
+        // Social sharing functions
+        function shareOnTwitter() {
+            if (!currentPost) return;
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(currentPost.title);
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+        }
+        
+        function shareOnFacebook() {
+            if (!currentPost) return;
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+        
+        function shareOnLinkedIn() {
+            if (!currentPost) return;
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+        }
+        
+        // Function to generate and update SEO
+        function updateSEO(posts) {
+            if (posts.length > 0) {
+                const latestTitles = posts.slice(0, 3).map(post => post.title).join(', ');
+                const metaDesc = document.querySelector('meta[name="description"]');
+                metaDesc.content = `Latest articles: ${latestTitles}. ${BLOG_CONFIG.siteDescription}`;
+            }
+        }
+        
+        // Initialize the blog
+        async function initBlog() {
+            try {
+                blogPosts = await discoverBlogPosts();
+                renderBlogPosts(blogPosts);
+                updateSEO(blogPosts);
+                
+                // Check if we should show a specific post
+                const urlParams = new URLSearchParams(window.location.search);
+                const postParam = urlParams.get('post');
+                
+                if (postParam) {
+                    const postIndex = blogPosts.findIndex(post => 
+                        post.filename.replace('.md', '') === postParam
+                    );
+                    if (postIndex !== -1) {
+                        showBlogPost(postIndex);
+                    }
+                }
+            } catch (error) {
+                console.error('Error initializing blog:', error);
+                document.getElementById('loading').innerHTML = `
+                    <p>Error loading blog posts. Please check your setup.</p>
+                `;
+            }
+        }
+        
+        // Load blog on page load
+        document.addEventListener('DOMContentLoaded', initBlog);
+    </script>
+</body>
+</html>
