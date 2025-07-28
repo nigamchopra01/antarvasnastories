@@ -117,9 +117,21 @@
         
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1px;
             background: #e9ecef;
+        }
+        
+        @media (min-width: 480px) {
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
         }
         
         .category-item {
@@ -158,6 +170,10 @@
         }
         
         /* Blog Grid */
+        .blog-section {
+            margin-bottom: 40px;
+        }
+        
         .blog-section h2 {
             font-size: 2rem;
             text-align: center;
@@ -167,9 +183,24 @@
         
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-bottom: 50px;
+            padding: 0 10px;
+        }
+        
+        @media (min-width: 769px) {
+            .blog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 30px;
+                padding: 0;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .blog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            }
         }
         
         .blog-card {
@@ -452,11 +483,109 @@
         }
         
         @media (max-width: 768px) {
-            .container { padding: 0 15px; }
-            .header h1 { font-size: 2rem; }
-            .blog-grid { grid-template-columns: 1fr; gap: 20px; }
-            .category-grid { grid-template-columns: 1fr; }
-            .article-content, .article-header { padding: 25px; }
+            .container { 
+                padding: 0 15px; 
+            }
+            
+            .header { 
+                padding: 40px 0; 
+            }
+            
+            .header h1 { 
+                font-size: 2rem; 
+                line-height: 1.2;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .blog-grid { 
+                grid-template-columns: 1fr; 
+                gap: 20px; 
+            }
+            
+            .blog-card {
+                margin: 0 5px;
+            }
+            
+            .blog-card-header {
+                padding: 15px;
+            }
+            
+            .blog-card-body {
+                padding: 20px;
+            }
+            
+            .blog-title {
+                font-size: 1.2rem;
+            }
+            
+            .category-grid { 
+                grid-template-columns: 1fr; 
+                gap: 1px;
+            }
+            
+            .category-item {
+                padding: 15px;
+            }
+            
+            .category-item h3 {
+                font-size: 1rem;
+            }
+            
+            .article-content, .article-header { 
+                padding: 20px; 
+            }
+            
+            .article-title {
+                font-size: 1.8rem;
+            }
+            
+            .seo-content {
+                padding: 30px 0;
+            }
+            
+            .seo-inner {
+                padding: 0 15px;
+            }
+            
+            .seo-links {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .seo-links li {
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.7rem;
+            }
+            
+            .blog-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .categories h2 {
+                font-size: 1.2rem;
+                padding: 12px 20px;
+            }
+            
+            .blog-card {
+                margin: 0;
+            }
+            
+            .blog-tags {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .tag {
+                margin-bottom: 4px;
+            }
         }
     </style>
 </head>
@@ -468,6 +597,17 @@
                 <h1>Free Hindi Sex Stories - Antarvasna Chudai Kahani</h1>
                 <p>Best collection of hindi sex stories, antarvasna chudai kahani, bhabhi mami padosi stories. Read free desi sex kahani updated daily in 2025.</p>
             </header>
+
+            <main class="blog-section">
+                <h2>🔥 Latest Hindi Sex Stories</h2>
+                
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading latest hindi sex stories...</p>
+                </div>
+                
+                <div id="blog-container" class="blog-grid" style="display: none;"></div>
+            </main>
 
             <!-- Categories Section -->
             <section class="categories">
@@ -499,17 +639,6 @@
                     </a>
                 </div>
             </section>
-
-            <main class="blog-section">
-                <h2>🔥 Latest Hindi Sex Stories</h2>
-                
-                <div id="loading" class="loading">
-                    <div class="spinner"></div>
-                    <p>Loading latest hindi sex stories...</p>
-                </div>
-                
-                <div id="blog-container" class="blog-grid" style="display: none;"></div>
-            </main>
         </div>
         
         <!-- Blog Post View -->
