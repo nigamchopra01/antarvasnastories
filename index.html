@@ -190,7 +190,7 @@
         
         .header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             animation: fadeInUp 1s ease-out;
         }
         
@@ -232,11 +232,48 @@
             margin: 0 auto;
         }
         
+        /* Navigation menu */
+        .main-nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .main-nav li {
+            background: var(--card-gradient);
+            padding: 8px 16px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .main-nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Blog section title */
+        .blog-section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 40px 0 30px 0;
+            color: var(--text-primary);
+        }
+        
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
-            margin-top: 60px;
+            margin-bottom: 40px;
         }
         
         .blog-card {
@@ -328,6 +365,25 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+        
+        .no-posts {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--card-gradient);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 40px 0;
+        }
+        
+        .no-posts h2 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        
+        .no-posts p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
         }
         
         @keyframes fadeInUp {
@@ -490,7 +546,7 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-           width: 4px;
+            width: 4px;
             height: 20px;
             background: linear-gradient(135deg, var(--accent), #2980b9);
             border-radius: 2px;
@@ -529,41 +585,6 @@
         
         .article-content a:hover {
             border-bottom-color: var(--accent);
-        }
-        
-        .article-content ul, .article-content ol {
-            margin: 20px 0;
-            padding-left: 30px;
-        }
-        
-        .article-content li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-        
-        .article-content li strong {
-            background: var(--accent-light);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        
-        .article-content code {
-            background: var(--accent-light);
-            color: var(--accent);
-            padding: 3px 8px;
-            border-radius: 6px;
-            font-family: 'SF Mono', Monaco, Consolas, monospace;
-            font-size: 0.9em;
-        }
-        
-        .article-content blockquote {
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            margin: 30px 0;
-            background: var(--accent-light);
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
         }
         
         .share-section {
@@ -618,437 +639,68 @@
             transform: translateY(-3px);
             box-shadow: var(--shadow);
         }
-        
-        .footer {
-            text-align: center;
-            margin-top: 80px;
+
+        /* SEO Content Section - Hidden but accessible to crawlers */
+        .seo-content {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        /* Alternative: Keep SEO content visible but styled as footer */
+        .seo-footer {
+            margin-top: 60px;
             padding: 40px 20px;
-            color: var(--text-secondary);
-            border-top: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.3);
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .blog-card {
-                padding: 20px;
-            }
-            
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-content {
-                padding: 25px;
-            }
-            
-            .article-content h1 {
-                font-size: 1.7rem;
-            }
-            
-            .article-content h2 {
-                font-size: 1.4rem;
-            }
-            
-            .share-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .share-btn {
-                width: 200px;
-                justify-content: center;
-            }
-        }
-        
-        /* SEO Enhancement: Ensure good contrast */
-        @media (prefers-contrast: high) {
-            :root {
-                --text-primary: #000;
-                --text-secondary: #333;
-            }
-        }
-        
-        /* Reduce motion for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Navigation menu */
-        .main-nav {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .main-nav li {
-            background: var(--accent-light);
-            padding: 10px 20px;
-            border-radius: 20px;
-        }
-        
-        .main-nav a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        /* Intro content */
-        .intro-content {
-            max-width: 800px;
-            margin: 0 auto 60px;
-            color: var(--text-secondary);
-        }
-        
-        .intro-content p {
+
+        .seo-footer h2 {
+            font-size: 1.3rem;
             margin-bottom: 20px;
+            color: var(--text-primary);
+            text-align: center;
         }
-        
-        /* Teaser list */
-        .teaser-list {
-            max-width: 800px;
-            margin: 0 auto;
-            list-style: none;
-        }
-        
-        .teaser-list li {
+
+        .seo-footer p {
             margin-bottom: 15px;
+            color: var(--text-secondary);
         }
-        
-        .teaser-list a {
+
+        .seo-links {
+            list-style: none;
+            margin: 20px 0;
+            columns: 2;
+            column-gap: 30px;
+        }
+
+        .seo-links li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        .seo-links a {
             color: var(--accent);
             text-decoration: none;
+            font-size: 0.9rem;
         }
-        
-        .teaser-list a:hover {
+
+        .seo-links a:hover {
             text-decoration: underline;
         }
-    </style>
-</head>
-<body>
-    <div class="bg-animation">
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-    </div>
-    
-    <div class="container">
-        <!-- Blog List View -->
-        <div id="blog-list-view">
-            <header class="header">
-                <div class="logo">
-                    <img src="logo.png" alt="hindi sex stories illustration" loading="eager">
-                </div>
-                <h1>Antarvasna Hindi Sex Stories - Free Desi Chudai Kahani</h1>
-                <p class="subtitle">Discover free hindi sex stories in antarvasna style, featuring hot chudai kahani with desi themes. Updated for 2025 with fresh content.</p>
-            </header>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/family-sex/">Family Sex Stories</a></li>
-                    <li><a href="/padosi-stories/">padosi Stories</a></li>
-                    <li><a href="/bhabhi-chudai/">Bhabhi Chudai</a></li>
-                    <li><a href="/mami-sex/">Mami Sex</a></li>
-                    <li><a href="/desi-kahani/">Desi Kahani</a></li>
-                </ul>
-            </nav>
-            
-            <div class="intro-content">
-                <p>Welcome to our premier site for free hindi sex stories, inspired by the classic antarvasna style. Here, you can explore a vast collection of chudai kahani that capture the essence of desi fantasies. Our hindi sex stories are crafted to provide an immersive experience, featuring themes like bhabhi chudai, mami sex, padosi kahani, and more. Each story is designed to cater to user intent, ensuring engaging and exciting narratives that keep you coming back for more.</p>
-                <p>In the world of hindi sex stories, antarvasna has set a benchmark for quality and excitement. We follow that tradition by offering free sex kahani that are updated regularly for 2025. Whether you are interested in family-based chudai ki kahani or hot desi sex story with padosi elements, our site has something for everyone. We focus on E-E-A-T principles by providing fictional content that is entertaining and responsibly created, with disclaimers to emphasize that all stories are imaginary.</p>
-                <p>Our collection of hindi sex stories includes detailed plots with characters like seductive bhabhi, naughty mami, and innocent padosis. Read about passionate encounters in chudai kahani that explore forbidden desires in a desi context. For example, in our popular bhabhi stories, you can find tales of young men discovering pleasure with their sister-in-law, all written in vivid hindi to enhance the experience. Similarly, mami sex stories delve into aunt-nephew dynamics with antarvasna flair.</p>
-                <p>To ensure quick ranking as a new adult site in 2025, we have optimized our on-page SEO with keywords like hindi sex stories, antarvasna, chudai kahani, and desi sex story naturally integrated. The site is mobile-friendly, fast-loading, and compliant with adult site guidelines. We use clean URLs, internal linking to categories and posts, and structured data to help search engines understand our content better.</p>
-                <p>Explore our latest updates and dive into the world of free hindi sex stories today. Remember, all content is fictional and intended for adults over 18. Enjoy responsibly, and check back for new chudai ki kahani in 2025.</p>
-                <p>As you browse our hindi sex stories, you'll find that each chudai kahani is written with attention to detail, capturing the cultural nuances of desi life. From village settings to urban adventures, our antarvasna style stories cover a wide range. For instance, padosi stories often focus on first-time experiences with tender yet passionate descriptions, while family sex stories explore complex relationships with discretion.</p>
-                <p>We prioritize user experience by offering easy navigation to categories like family sex, padosi stories, and more. Our blog folder contains .md files converted to HTML, ensuring fresh content is always available. With over 1000 words of optimized text on the homepage, we aim to provide value and rank higher in search results for hindi sex stories queries.</p>
-                <p>In addition to our stories, we encourage users to share their favorite chudai kahani on social media. Our site is built with modern web standards, minified code for speed, and compressed images with alt text like 'hindi sex stories illustration' for better SEO. We have robots.txt allowing all crawlers and sitemap.xml listing all pages for better indexing.</p>
-                <p>Thank you for visiting our site for free hindi sex stories. We hope you enjoy the antarvasna inspired content and return for more desi chudai kahani in 2025.</p>
-            </div>
-            
-            <h2 style="text-align: center; margin-bottom: 30px;">Latest Hindi Sex Stories</h2>
-            
-            <ul class="teaser-list">
-                <li><a href="?post=bhabhi-ki-chudai">Read Bhabhi Ki Chudai Kahani</a> - A steamy hindi sex stories about a bhabhi and her devar in antarvasna style.</li>
-                <li><a href="?post=mami-sex-story">Read Mami Sex Story</a> - Hot chudai kahani with mami and bhanja, full desi sex story.</li>
-                <li><a href="?post=padosi-chudai-kahani">Read padosi Chudai Kahani</a> - First time sex stories in hindi, antarvasna inspired.</li>
-                <li><a href="?post=sister-sex-story">Read Sister Sex Story</a> - Forbidden desi chudai ki kahani with sister themes.</li>
-                <li><a href="?post=family-chudai">Read Family Chudai</a> - Family based hindi sex stories with multiple characters.</li>
-                <li><a href="?post=desi-bhabhi-story">Read Desi Bhabhi Story</a> - Classic bhabhi chudai in desi setting.</li>
-                <li><a href="?post=antarvasna-chudai">Read Antarvasna Chudai</a> - Pure antarvasna style sex kahani.</li>
-                <li><a href="?post=hot-mami-kahani">Read Hot Mami Kahani</a> - Sexy mami sex stories in hindi.</li>
-                <li><a href="?post=sexy-padosi-story">Read Sexy padosi Story</a> - padosi girls in hot chudai scenarios.</li>
-                <li><a href="?post=chudai-ki-kahani">Read Chudai Ki Kahani</a> - General desi chudai hindi sex stories.</li>
-            </ul>
-            
-            <main>
-                <div id="loading" class="loading">
-                    <div class="spinner"></div>
-                    <p>Loading latest hindi sex stories...</p>
-                </div>
-                
-                <div id="blog-container" class="blog-grid" style="display: none;"></div>
-            </main>
-        </div>
-        
-        <!-- Blog Post View -->
-        <div id="blog-post-view" class="blog-post-view">
-            <nav class="back-nav">
-                <a class="back-link" onclick="showBlogList()">
-                    ← Back to Hindi Sex Stories
-                </a>
-            </nav>
-            
-            <header class="article-header" id="article-header">
-                <!-- Will be populated dynamically -->
-            </header>
-            
-            <article class="article-content" id="article-content">
-                <!-- Will be populated dynamically -->
-            </article>
-            
-            <div class="share-section">
-                <h3 class="share-title">Share this chudai kahani</h3>
-                <div class="share-buttons">
-                    <a class="share-btn twitter" onclick="shareOnTwitter()">
-                        📱 Share on Twitter
-                    </a>
-                    <a class="share-btn facebook" onclick="shareOnFacebook()">
-                        📘 Share on Facebook
-                    </a>
-                    <a class="share-btn linkedin" onclick="shareOnLinkedIn()">
-                        💼 Share on LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <footer class="footer">
-            <p>&copy; 2025 Antarvasna Stories. All rights reserved. Updated on July 28, 2025. All stories are fictional and for adults only. Built with ❤️ and modern web standards.</p>
-        </footer>
-    </div>
-    
-    <script>
-        // Age verification
-        window.addEventListener('load', () => {
-            if (!localStorage.getItem('ageVerified')) {
-                const isAdult = confirm("Are you 18 years or older? This site contains adult hindi sex stories content.");
-                if (isAdult) {
-                    localStorage.setItem('ageVerified', 'true');
-                } else {
-                    window.location.href = "https://www.google.com";
-                }
-            }
-        });
-        
-        // Blog configuration
-        const BLOG_CONFIG = {
-            blogFolder: 'blog',
-            postsPerPage: 10,
-            baseUrl: 'https://antarvasnastories.com/',
-            siteTitle: 'Antarvasna Stories',
-            siteDescription: 'Free hindi sex stories in antarvasna style with chudai kahani'
-        };
-        
-        // Blog posts will be automatically discovered
-        let blogPosts = [];
-        let currentPost = null;
-        
-        // Enhanced markdown parser
-        function parseMarkdown(content) {
-            // Handle headers
-            content = content.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-            content = content.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-            content = content.replace(/^# (.+)$/gm, '<h1>$1</h1>');
-            
-            // Handle emphasis
-            content = content.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-            content = content.replace(/\*(.+?)\*/g, '<em>$1</em>');
-            
-            // Handle links
-            content = content.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
-            
-            // Handle inline code
-            content = content.replace(/`(.+?)`/g, '<code>$1</code>');
-            
-            // Handle blockquotes
-            content = content.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
-            
-            // Handle lists
-            const lines = content.split('\n');
-            let inList = false;
-            let listType = null;
-            let result = [];
-            
-            for (let i = 0; i < lines.length; i++) {
-                const line = lines[i];
-                const isOrderedList = /^\d+\.\s/.test(line);
-                const isUnorderedList = /^[-*+]\s/.test(line);
-                
-                if (isOrderedList || isUnorderedList) {
-                    const currentListType = isOrderedList ? 'ol' : 'ul';
-                    
-                    if (!inList) {
-                        result.push(`<${currentListType}>`);
-                        inList = true;
-                        listType = currentListType;
-                    } else if (listType !== currentListType) {
-                        result.push(`</${list            width: 4px;
-            height: 20px;
-            background: linear-gradient(135deg, var(--accent), #2980b9);
-            border-radius: 2px;
-        }
-        
-        .article-content h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin: 25px 0 10px 0;
-            color: var(--text-primary);
-        }
-        
-        .article-content p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-        
-        .article-content strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-        
-        .article-content em {
-            color: var(--accent);
-            font-style: italic;
-        }
-        
-        .article-content a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 2px solid transparent;
-            transition: border-bottom-color 0.3s ease;
-        }
-        
-        .article-content a:hover {
-            border-bottom-color: var(--accent);
-        }
-        
-        .article-content ul, .article-content ol {
-            margin: 20px 0;
-            padding-left: 30px;
-        }
-        
-        .article-content li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-        
-        .article-content li strong {
-            background: var(--accent-light);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        
-        .article-content code {
-            background: var(--accent-light);
-            color: var(--accent);
-            padding: 3px 8px;
-            border-radius: 6px;
-            font-family: 'SF Mono', Monaco, Consolas, monospace;
-            font-size: 0.9em;
-        }
-        
-        .article-content blockquote {
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            margin: 30px 0;
-            background: var(--accent-light);
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-        }
-        
-        .share-section {
-            margin-top: 50px;
-            padding: 30px;
-            background: rgba(255,255,255,0.5);
-            border-radius: var(--border-radius);
-            text-align: center;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-        
-        .share-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-        
-        .share-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            color: white;
-            cursor: pointer;
-        }
-        
-        .share-btn.twitter {
-            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
-        }
-        
-        .share-btn.facebook {
-            background: linear-gradient(135deg, #4267b2, #365899);
-        }
-        
-        .share-btn.linkedin {
-            background: linear-gradient(135deg, #0077b5, #005885);
-        }
-        
-        .share-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
         
         .footer {
             text-align: center;
-            margin-top: 80px;
-            padding: 40px 20px;
+            margin-top: 50px;
+            padding: 30px 20px;
             color: var(--text-secondary);
             border-top: 1px solid rgba(255,255,255,0.3);
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
@@ -1094,6 +746,10 @@
                 width: 200px;
                 justify-content: center;
             }
+
+            .seo-links {
+                columns: 1;
+            }
         }
         
         /* SEO Enhancement: Ensure good contrast */
@@ -1111,57 +767,6 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
-        }
-
-        /* Navigation menu */
-        .main-nav {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .main-nav li {
-            background: var(--card-gradient);
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .main-nav a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .intro-content {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            padding: 20px;
-            background: var(--card-gradient);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-
-        .teaser-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .teaser-list li {
-            margin-bottom: 15px;
-        }
-
-        .teaser-list a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
         }
     </style>
 </head>
@@ -1186,46 +791,22 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="/family-sex/">Family Sex Stories</a></li>
-                    <li><a href="/padosi-stories/">padosi Stories</a></li>
+                    <li><a href="/padosi-stories/">Padosi Stories</a></li>
                     <li><a href="/bhabhi-chudai/">Bhabhi Chudai</a></li>
                     <li><a href="/mami-sex/">Mami Sex</a></li>
                     <li><a href="/desi-kahani/">Desi Kahani</a></li>
                 </ul>
             </nav>
 
-            <div class="intro-content">
-                <p>Welcome to Antarvasna Stories, the ultimate destination for free hindi sex stories. Our site is dedicated to providing high-quality desi sex stories in the classic antarvasna style, focusing on exciting chudai kahani that explore various themes like bhabhi sex, mami chudai, padosi experiences, and more. As a new adult site in 2025, we aim to rank quickly by following on-page SEO best practices, ensuring our content is fresh, engaging, and optimized for user intent.</p>
-                <p>In our collection of hindi sex stories, you will find narratives that are crafted to captivate and excite. Each chudai kahani is fictional and designed for adult entertainment only. We emphasize E-E-A-T by providing disclaimers that all stories are imaginary and do not promote real-life actions. Our desi sex stories are updated regularly to keep the content fresh, with the current date being July 28, 2025, signaling to search engines our commitment to timeliness.</p>
-                <p>Whether you are searching for hot bhabhi chudai stories where a young man explores forbidden desires with his sister-in-law, or mami sex kahani full of passion and intrigue, our site has something for every taste. We also feature padosi stories that delve into first-time experiences with a desi twist, ensuring that our hindi sex stories cater to a wide audience. The antarvasna style is known for its vivid descriptions and relatable characters, making each chudai kahani a thrilling read.</p>
-                <p>To enhance your experience, we have optimized the site for mobile users with responsive design and fast loading times. Images are compressed, and alt text like 'hindi sex stories illustration' is used for better SEO. We avoid keyword stuffing, instead naturally integrating terms like hindi sex stories, antarvasna, chudai kahani, and desi sex story throughout the content to match user search intent.</p>
-                <p>Our blog folder contains .md files converted to HTML, allowing for easy updates and deep crawling. Internal linking is key, with navigation to categories and direct links to stories. For crawl depth, we link to at least 5-10 blog posts from the homepage. The site uses clean URLs and canonical tags to avoid duplicate content issues. We have robots.txt allowing all crawlers and sitemap.xml listing all pages for better indexing.</p>
-                <p>Enjoy our free sex kahani collection responsibly. Remember, this is an adult site, and we have an age verification popup to ensure compliance. All content is fictional, created for entertainment purposes only. Dive into the world of antarvasna hindi sex stories today and discover why our chudai kahani are the best in 2025.</p>
-                <p>As you explore our hindi sex stories, you'll notice the attention to detail in each narrative. For example, in a typical bhabhi chudai story, the plot builds tension with everyday desi life scenes before escalating to passionate encounters. Similarly, mami sex stories often involve family gatherings turning into secret affairs, adding layers of excitement. padosi kahani focus on innocence and discovery, written in a way that resonates with readers seeking relatable experiences.</p>
-                <p>We strive to provide value through our desi sex stories, ensuring they are not only entertaining but also well-written. Our authors draw inspiration from antarvasna traditions, incorporating cultural elements that make the chudai kahani authentic. With over 1000 words of content on this homepage alone, we aim for comprehensive coverage that helps in quick ranking as a new site in the adult niche.</p>
-                <p>Join us in 2025 for the latest updates in hindi sex stories. Bookmark our site and check back often for new chudai kahani. If you enjoy our content, share it with friends who appreciate quality desi sex stories. Thank you for visiting Antarvasna Stories – your source for free, exciting adult reading.</p>
-            </div>
-            
             <main>
-                <h2>Latest Hindi Sex Stories</h2>
+                <h2 class="blog-section-title">Latest Hindi Sex Stories</h2>
+                
                 <div id="loading" class="loading">
                     <div class="spinner"></div>
                     <p>Loading latest hindi sex stories...</p>
                 </div>
                 
                 <div id="blog-container" class="blog-grid" style="display: none;"></div>
-
-                <ul class="teaser-list">
-                    <li><a href="?post=bhabhi-ki-chudai">Read Bhabhi Ki Chudai Kahani</a> - A hot desi story of forbidden love in hindi sex stories style.</li>
-                    <li><a href="?post=mami-sex-story">Read Mami Bhanja Chudai Kahani</a> - Antarvasna inspired mami sex with passionate twists.</li>
-                    <li><a href="?post=padosi-chudai-kahani">Read padosi Girl Chudai Story</a> - First time experiences in free hindi sex stories.</li>
-                    <li><a href="?post=sister-sex-story">Read Behan Ki Chudai Kahani</a> - Family themed desi sex story full of excitement.</li>
-                    <li><a href="?post=family-chudai">Read Family Sex Kahani</a> - Group chudai in antarvasna style hindi stories.</li>
-                    <li><a href="?post=desi-bhabhi-story">Read Desi Bhabhi Sex Story</a> - Village bhabhi chudai with hot scenes.</li>
-                    <li><a href="?post=antarvasna-chudai">Read Antarvasna Chudai Kahani</a> - Classic style free sex kahani.</li>
-                    <li><a href="?post=hot-mami-kahani">Read Hot Mami Story</a> - Seductive mami in desi hindi sex stories.</li>
-                    <li><a href="?post=sexy-padosi-story">Read Sexy padosi Kahani</a> - Innocent girl turns wild in chudai story.</li>
-                    <li><a href="?post=chudai-ki-kahani">Read Chudai Ki Kahani</a> - General hot desi chudai in hindi.</li>
-                </ul>
             </main>
         </div>
         
@@ -1260,6 +841,31 @@
                 </div>
             </div>
         </div>
+
+        <!-- SEO Content moved to footer section -->
+        <div class="seo-footer">
+            <h2>About Antarvasna Hindi Sex Stories</h2>
+            <p>Welcome to Antarvasna Stories, the ultimate destination for free hindi sex stories. Our site is dedicated to providing high-quality desi sex stories in the classic antarvasna style, focusing on exciting chudai kahani that explore various themes like bhabhi sex, mami chudai, padosi experiences, and more. As a new adult site in 2025, we aim to rank quickly by following on-page SEO best practices, ensuring our content is fresh, engaging, and optimized for user intent.</p>
+            
+            <p>In our collection of hindi sex stories, you will find narratives that are crafted to captivate and excite. Each chudai kahani is fictional and designed for adult entertainment only. We emphasize E-E-A-T by providing disclaimers that all stories are imaginary and do not promote real-life actions. Our desi sex stories are updated regularly to keep the content fresh, with the current date being July 28, 2025.</p>
+            
+            <p>Whether you are searching for hot bhabhi chudai stories where a young man explores forbidden desires with his sister-in-law, or mami sex kahani full of passion and intrigue, our site has something for every taste. We also feature padosi stories that delve into first-time experiences with a desi twist, ensuring that our hindi sex stories cater to a wide audience.</p>
+            
+            <ul class="seo-links">
+                <li><a href="?post=bhabhi-ki-chudai">Read Bhabhi Ki Chudai Kahani</a> - A hot desi story of forbidden love in hindi sex stories style.</li>
+                <li><a href="?post=mami-sex-story">Read Mami Bhanja Chudai Kahani</a> - Antarvasna inspired mami sex with passionate twists.</li>
+                <li><a href="?post=padosi-chudai-kahani">Read Padosi Girl Chudai Story</a> - First time experiences in free hindi sex stories.</li>
+                <li><a href="?post=sister-sex-story">Read Behan Ki Chudai Kahani</a> - Family themed desi sex story full of excitement.</li>
+                <li><a href="?post=family-chudai">Read Family Sex Kahani</a> - Group chudai in antarvasna style hindi stories.</li>
+                <li><a href="?post=desi-bhabhi-story">Read Desi Bhabhi Sex Story</a> - Village bhabhi chudai with hot scenes.</li>
+                <li><a href="?post=antarvasna-chudai">Read Antarvasna Chudai Kahani</a> - Classic style free sex kahani.</li>
+                <li><a href="?post=hot-mami-kahani">Read Hot Mami Story</a> - Seductive mami in desi hindi sex stories.</li>
+                <li><a href="?post=sexy-padosi-story">Read Sexy Padosi Kahani</a> - Innocent girl turns wild in chudai story.</li>
+                <li><a href="?post=chudai-ki-kahani">Read Chudai Ki Kahani</a> - General hot desi chudai in hindi.</li>
+            </ul>
+            
+            <p>Join us in 2025 for the latest updates in hindi sex stories. Bookmark our site and check back often for new chudai kahani. If you enjoy our content, share it with friends who appreciate quality desi sex stories. Thank you for visiting Antarvasna Stories – your source for free, exciting adult reading.</p>
+        </div>
         
         <footer class="footer">
             <p>&copy; 2025 Antarvasna Stories. All rights reserved. Updated on July 28, 2025. All stories are fictional and for adults only. We do not promote any illegal activities.</p>
@@ -1267,14 +873,17 @@
     </div>
     
     <script>
-        // Age verification
+        // Age verification (removed localStorage usage)
+        let ageVerified = false;
+        
         window.addEventListener('load', () => {
-            if (!localStorage.getItem('ageVerified')) {
+            if (!ageVerified) {
                 const isAdult = confirm("Are you 18 years or older? This site contains adult content (hindi sex stories).");
                 if (isAdult) {
-                    localStorage.setItem('ageVerified', 'true');
+                    ageVerified = true;
                 } else {
                     window.location.href = "https://www.google.com";
+                    return;
                 }
             }
         });
@@ -1334,7 +943,7 @@
                         result.push(`</${listType}>`);
                         result.push(`<${currentListType}>`);
                         listType = currentListType;
-                   }
+                    }
                     
                     const listItem = line.replace(/^(\d+\.|\-|\*|\+)\s/, '');
                     result.push(`<li>${listItem}</li>`);
@@ -1416,10 +1025,15 @@
         
         // Function to discover blog posts
         async function discoverBlogPosts() {
-            // List of markdown files to check - UPDATE THIS when you add new posts
+            // Updated list of markdown files - ADD YOUR ACTUAL BLOG POST FILES HERE
             const postManifest = [
                 'antarvasna-mami-bhanja-sex-kahani-full.md',
-                
+                'bhabhi-ki-chudai.md',
+                'mami-sex-story.md',
+                'padosi-chudai-kahani.md',
+                'sister-sex-story.md',
+                'family-chudai.md',
+                // Add more files as you create them
             ];
             
             const posts = [];
@@ -1463,10 +1077,11 @@
             
             if (posts.length === 0) {
                 container.innerHTML = `
-                    <div class="blog-card" style="grid-column: 1 / -1; text-align: center;">
-                        <h2>Welcome to Antarvasna Stories!</h2>
-                        <p>No hindi sex stories found yet. Add your first .md file to the blog/ folder to get started.</p>
-                        <p style="margin-top: 20px;">Create a file like blog/bhabhi-ki-chudai.md and it will automatically appear here!</p>
+                    <div class="no-posts">
+                        <h2>No Stories Found</h2>
+                        <p>No hindi sex stories are currently available.</p>
+                        <p>Please add .md files to the blog/ folder to display content.</p>
+                        <p><strong>Debug info:</strong> Make sure your markdown files are in the correct blog/ directory.</p>
                     </div>
                 `;
             } else {
@@ -1615,7 +1230,9 @@
             if (posts.length > 0) {
                 const latestTitles = posts.slice(0, 3).map(post => post.title).join(', ');
                 const metaDesc = document.querySelector('meta[name="description"]');
-                metaDesc.content = `Latest hindi sex stories: ${latestTitles}. ${BLOG_CONFIG.siteDescription}`;
+                if (metaDesc) {
+                    metaDesc.content = `Latest hindi sex stories: ${latestTitles}. ${BLOG_CONFIG.siteDescription}`;
+                }
             }
         }
         
@@ -1641,7 +1258,11 @@
             } catch (error) {
                 console.error('Error initializing blog:', error);
                 document.getElementById('loading').innerHTML = `
-                    <p>Error loading hindi sex stories. Please check your setup.</p>
+                    <div class="no-posts">
+                        <h2>Error Loading Stories</h2>
+                        <p>Could not load hindi sex stories. Please check your setup.</p>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                    </div>
                 `;
             }
         }
